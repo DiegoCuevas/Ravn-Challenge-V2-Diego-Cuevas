@@ -3,7 +3,6 @@ import { useQuery } from "@apollo/client";
 import { GETPERSON } from "../../data/data";
 import giphy from "../../assets/images/giphy.gif";
 
-
 const capitalize = (word) => {
   return word.charAt(0).toUpperCase() + word.slice(1);
 };
@@ -26,7 +25,7 @@ export default function InfoTable({ id }) {
     );
 
   return (
-    <div className="w-2/3 px-24 py-8">
+    <div className={`tablet:w-2/3 cel:w-1/2 cel:px-10 px-24 py-8`}>
       <div>
         <div className="font-bold">General Information</div>
         <div className="flex justify-between border-b-2 py-4">
