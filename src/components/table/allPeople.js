@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import Info from "../infoCharacter/infoCharacter.js";
 import { GETALLPEOPLE } from "../../data/data";
-import giphy from '../../assets/images/giphy.gif'
+import giphy from "../../assets/images/giphy.gif";
 function AllPeople() {
   const { loading, error, data, fetchMore } = useQuery(GETALLPEOPLE, {
     variables: { after: null },
@@ -25,12 +25,13 @@ function AllPeople() {
     }, 1000);
   };
 
-  if (loading) return (
-    <div className="w-1/4 py-4 flex justify-center items-start border-r-2 h-table">
-      <img className="w-8" src={giphy} alt="loading..." />
-      <p className="mx-4 text-gray-400">loading</p>
-    </div>
-  );
+  if (loading)
+    return (
+      <div className="w-1/4 py-4 flex justify-center items-start border-r-2 h-table">
+        <img className="w-8" src={giphy} alt="loading..." />
+        <p className="mx-4 text-gray-400">loading</p>
+      </div>
+    );
   if (error)
     return (
       <div className="w-1/4 py-4 flex justify-center border-r-2 h-table">
@@ -38,8 +39,12 @@ function AllPeople() {
       </div>
     );
   return (
-    <div className="flex">
-      <div className="w-1/4 border-r-2">
+    <div className="flex overflow-y-hidden">
+      <div
+        className={`tablet:w-1/4 ${
+          id ? "cel:1/3" : "cel:w-full"
+        }  h-scroll border-r-2 overflow-y-scroll`}
+      >
         {data.allPeople.edges.map(({ node }) => {
           return (
             <div
@@ -53,7 +58,6 @@ function AllPeople() {
               </div>
               <div className="border-b-2 w-card absolute right-0 bottom-0"></div>
             </div>
-            
           );
         })}
         {data.allPeople.pageInfo.hasNextPage ? (
