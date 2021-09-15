@@ -19,7 +19,7 @@ yarn install
 
 next, execute:
 ```
-yarn run start
+yarn start
 ```
 then open your web browser with the following address:
 ```
