@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 
 export const GETALLPEOPLE = gql`
-  query charQuery($after: String) {
+  query customQuery($after: String) {
     allPeople(first: 5, after: $after) {
       totalCount
       edges {
@@ -28,6 +28,7 @@ export const GETALLPEOPLE = gql`
 export const GETPERSON = gql`
   query info($id: ID!) {
     person(id: $id) {
+      name
       eyeColor
       hairColor
       skinColor
