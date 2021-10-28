@@ -1,4 +1,4 @@
-# Ravn Star Wars Registry
+# Star Wars Character
 
 It is an application developed with ReactJs that consumes an Api and displays data dynamically. It loads 5 by 5 characters, and displays the information of each one.
 ## Requirements
